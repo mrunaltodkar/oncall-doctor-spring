@@ -9,22 +9,19 @@ public class Customer {
 	private String password;
 	private long number;
 	private String email;
-	private Payment payment;
-	private Wishlist wishlist;
 
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Customer(String username, String password, long number, String email, Payment payment, Wishlist wishlist) {
+	public Customer(String username, String password, long number, String email) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.number = number;
 		this.email = email;
-		this.payment = payment;
-		this.wishlist = wishlist;
+
 	}
 
 	public String getUsername() {
@@ -57,28 +54,6 @@ public class Customer {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	
-	public Payment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
-
-	public Wishlist getWishlist() {
-		return wishlist;
-	}
-
-	public void setWishlist(Wishlist wishlist) {
-		this.wishlist = wishlist;
-	}
-
-	@Override
-	public String toString() {
-		return "Customer [username=" + username + ", password=" + password + ", number=" + number + ", email=" + email
-				+ ", payment=" + payment + ", whishlist=" + wishlist +  "]";
 	}
 
 }

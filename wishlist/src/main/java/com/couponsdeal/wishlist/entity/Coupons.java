@@ -2,10 +2,9 @@ package com.couponsdeal.wishlist.entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
 public class Coupons {
 
-	private long couponId;
+	private String couponId;
 	private String couponName;
 	private String couponDescription;
 	private String couponRate;
@@ -14,7 +13,7 @@ public class Coupons {
 		super();
 	}
 
-	public Coupons(long couponId, String couponName, String couponDescription, String couponRate) {
+	public Coupons(String couponId, String couponName, String couponDescription, String couponRate) {
 		super();
 		this.couponId = couponId;
 		this.couponName = couponName;
@@ -22,11 +21,11 @@ public class Coupons {
 		this.couponRate = couponRate;
 	}
 
-	public long getCouponId() {
+	public String getCouponId() {
 		return couponId;
 	}
 
-	public void setCouponId(long couponId) {
+	public void setCouponId(String couponId) {
 		this.couponId = couponId;
 	}
 
@@ -52,12 +51,6 @@ public class Coupons {
 
 	public void setCouponRate(String couponRate) {
 		this.couponRate = couponRate;
-	}
-
-	@Override
-	public String toString() {
-		return "Coupons [couponId=" + couponId + ", couponName=" + couponName + ", couponDescription="
-				+ couponDescription + ", couponRate=" + couponRate + "]";
 	}
 
 }

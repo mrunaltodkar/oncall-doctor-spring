@@ -3,19 +3,18 @@ package com.couponsdeal.payment.entity;
 public class CardDetails {
 
 	private String cardHolderName;
-	private String cardName;
+	private String cardNumber;
 	private String expiryDate;
 	private String cvv;
 
 	public CardDetails() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public CardDetails(String cardHolderName, String cardName, String expiryDate, String cvv) {
+	public CardDetails(String cardHolderName, String cardNumber, String expiryDate, String cvv) {
 		super();
 		this.cardHolderName = cardHolderName;
-		this.cardName = cardName;
+		this.cardNumber = cardNumber;
 		this.expiryDate = expiryDate;
 		this.cvv = cvv;
 	}
@@ -28,12 +27,12 @@ public class CardDetails {
 		this.cardHolderName = cardHolderName;
 	}
 
-	public String getCardName() {
-		return cardName;
+	public String getCardNumber() {
+		return cardNumber;
 	}
 
-	public void setCardName(String cardName) {
-		this.cardName = cardName;
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
 	}
 
 	public String getExpiryDate() {

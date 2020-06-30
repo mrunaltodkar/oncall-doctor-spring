@@ -9,5 +9,7 @@ import com.couponsdeal.couponsdeal.entity.Customer;
 public interface CustomerDao extends MongoRepository<Customer, String> {
 
 	public Customer findByEmail(String email);
+	
+	void deleteByEmail(String email);
 
 }

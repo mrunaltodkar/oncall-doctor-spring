@@ -2,10 +2,12 @@ package com.couponsdeal.couponsdeal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-//@EnableEurekaServer
+@EnableEurekaServer
 @SpringBootApplication
 public class CouponsdealApplication {
 
@@ -14,7 +16,7 @@ public class CouponsdealApplication {
 	}
 
 	@Bean
-	//@LoadBalanced
+	@LoadBalanced
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}

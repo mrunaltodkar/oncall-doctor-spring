@@ -37,7 +37,7 @@ public class ImagesController {
 	String fileID = "";
 
 	@PostMapping("/savecoupons")
-	public String saveCouponsmManually() throws FileNotFoundException, IOException {
+	public String saveCouponsManually() throws FileNotFoundException, IOException {
 
 		DBObject metaData = new BasicDBObject();
 		metaData.put("couponId", "2");
@@ -59,15 +59,17 @@ public class ImagesController {
 			throws FileNotFoundException, IOException {
 
 		System.out.println("hitting");
+
 		GridFSDBFile dbFile = gridFsOperations.findOne(new Query(Criteria.where("metadata.couponId").is(couponId)));
+		DBObject dbObject = dbFile.getMetaData();
 		InputStreamResource inputStreamResource = new InputStreamResource(dbFile.getInputStream());
-		return new ResponseEntity(inputStreamResource, HttpStatus.FOUND);
+		return new ResponseEntity(dbObject, HttpStatus.FOUND);
 
 	}
 
 	@GetMapping("/allcoupons")
 	public ResponseEntity<List<FileResource>> retrieveAllCoupons() throws IOException, FileNotFoundException {
-		
+
 		List<GridFSDBFile> dbFileList = gridFsOperations.find(null);
 		List<FileResource> fileResource = new ArrayList<>();
 
@@ -78,7 +80,7 @@ public class ImagesController {
 		return new ResponseEntity<List<FileResource>>(fileResource, HttpStatus.OK);
 
 	}
-	
+
 	@GetMapping("/retrieve/{id}")
 	public ResponseEntity retrieveImageUsingObjectId(@PathVariable String id)
 			throws FileNotFoundException, IOException {
